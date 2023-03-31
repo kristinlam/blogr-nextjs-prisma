@@ -10,7 +10,7 @@ const Draft: React.FC = () => {
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     try {
-      axios.post('/api/post', { title, content });
+      await axios.post('/api/post', { title, content });
       await Router.push('/drafts');
     } catch (error) {
       console.error(error);
